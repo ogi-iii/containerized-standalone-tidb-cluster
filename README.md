@@ -18,7 +18,7 @@ docker image build -t standalone-tidb-cluster:latest .
 ### 2. Run
 
 ```bash
-docker container run --rm -d \
+docker container run --rm \
     -p 4000:4000 \
     -p 2379:2379 \
     -p 9090:9090 \
