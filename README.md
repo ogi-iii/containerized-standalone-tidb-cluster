@@ -80,19 +80,20 @@ docker container stop standalone-tidb-cluster
 
 ## [Optional] Customized TiDB Cluster
 
-The following commands customize the number of PD, TiDB, TiKV, and TiFlash instances when building the Docker image of TiDB cluster.
+The following commands customize the number of PD, TiDB, TiKV, and TiFlash instances in the specific version of TiDB cluster when building the Docker image.
 
-***It depends on the disk size limit of your Docker whether the container of customized TiDB cluster run or not.**
+***It depends on the disk size limit of your Docker whether the container of customized TiDB cluster can be run or not.**
 
 ### Customized Build Example
 
 ```bash
-# TiDB cluster with
-# 3 PD instance,
-# 2 TiDB instance,
-# 3 TiKV instance,
-# and 2 TiFlash instance.
+# 3 PD instances,
+# 2 TiDB instances,
+# 3 TiKV instances,
+# and 2 TiFlash instances
+# in the TiDB cluster version '7.0.0'
 docker image build \
+    --build-arg version=7.0.0 \
     --build-arg pd=3 \
     --build-arg tidb=2 \
     --build-arg tikv=3 \
